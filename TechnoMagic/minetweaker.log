@@ -1,0 +1,8 @@
+INFO: Loaded class registry: IC2 mod support
+INFO: Loaded class registry: NEI mod support
+ERROR: system: AutoSpawner is already defined in that package
+INFO: Loaded class registry: MFR mod support
+INFO: MineTweaker: Building registry
+INFO: MineTweaker: Sucessfully built item registry
+INFO: Adding command minetweaker
+INFO: Adding minetweaker command mfr

@@ -1,0 +1,153 @@
+# This is the main configuration file for TileEntities.
+# 
+# If you need help with the configuration or have any questions related to Cauldron,
+# join us at the IRC or drop by our forums and leave a post.
+# 
+# IRC: #cauldron @ irc.esper.net ( http://webchat.esper.net/?channel=cauldron )
+# Forums: http://cauldron.minecraftforge.net/
+# 
+# Setting: settings.skip-tileentity-ticks Default: true   # If enabled, turns on tileentity tick skip feature when no players are near.
+# Setting: debug.enable-te-inventory-warning Default: false   # Set true to detect which tileentities with inventory failed to detect size for Bukkit's InventoryType enum. Note: This may detect a false-positive.
+# Setting: settings.prevent-invalid-tileentity-updates Default: true   # Used to determine if a tileentity should tick and if not the TE is added to a ban list. Note: This should help improve performance.
+# Setting: debug.enable-te-can-update-warning Default: false   # Set true to detect which tileentities should not be ticking.
+# Setting: debug.enable-te-place-warning Default: false   # Warn when a mod requests tile entity from a block that doesn't support one
+
+settings:
+  skip-tileentity-ticks: true
+  prevent-invalid-tileentity-updates: true
+debug:
+  enable-te-inventory-warning: false
+  enable-te-can-update-warning: false
+  enable-te-place-warning: false
+config-version: 1
+world-settings:
+  default:
+    thaumcraft-common-tiles-TileNode:
+      tick-no-players: false
+      tick-interval: 1
+    net-minecraft-tileentity-TileEntityMobSpawner:
+      tick-no-players: false
+      tick-interval: 1
+    net-minecraft-tileentity-TileEntityChest:
+      tick-no-players: false
+      tick-interval: 1
+    forestry-apiculture-tiles-TileSwarm:
+      tick-no-players: false
+      tick-interval: 1
+    thaumcraft-common-tiles-TileEldritchObelisk:
+      tick-no-players: false
+      tick-interval: 1
+    thaumcraft-common-tiles-TileEldritchAltar:
+      tick-no-players: false
+      tick-interval: 1
+    net-minecraft-tileentity-TileEntityFurnace:
+      tick-no-players: false
+      tick-interval: 1
+    forestry-apiculture-tiles-TileApiary:
+      tick-no-players: false
+      tick-interval: 1
+    forestry-core-tiles-TileEscritoire:
+      tick-no-players: false
+      tick-interval: 1
+    vazkii-botania-common-block-tile-mana-TilePool:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-worldgen-WorldHandlerVillageDistrictWallBlockVillageWallGenTileEntityVillageWallGen:
+      tick-no-players: false
+      tick-interval: 1
+    vazkii-botania-common-block-tile-TileSpecialFlower:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockAreaMarkerTileEntityAreaCurseProtect:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockAreaMarkerTileEntityAreaTeleportPullProtect:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockDreamCatcherTileEntityDreamCatcher:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockAltarTileEntityAltar:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-brewing-TileEntityCauldron:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockChaliceTileEntityChalice:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockVoidBrambleTileEntityVoidBramble:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockRefillingChestTileEntityRefillingChest:
+      tick-no-players: false
+      tick-interval: 1
+    thaumcraft-common-tiles-TileEldritchCrabSpawner:
+      tick-no-players: false
+      tick-interval: 1
+    thaumcraft-common-tiles-TileEldritchCrystal:
+      tick-no-players: false
+      tick-interval: 1
+    thaumcraft-common-tiles-TileEldritchTrap:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockPoppetShelfTileEntityPoppetShelf:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockCoffinTileEntityCoffin:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockFetishTileEntityFetish:
+      tick-no-players: false
+      tick-interval: 1
+    wanion-avaritiaddons-block-chest-infinity-TileEntityInfinityChest:
+      tick-no-players: false
+      tick-interval: 1
+    com-creativemd-opf-block-TileEntityPicFrame:
+      tick-no-players: false
+      tick-interval: 1
+    com-emoniph-witchery-blocks-BlockWitchesOvenTileEntityWitchesOven:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-integration-botania-TileEntityTerrasteelSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-base-TileEntityError:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-overtimepanel-TileEntityPhotonicSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    ic2-core-block-machine-tileentity-TileEntityMacerator:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-integration-botania-TileEntityElementumSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-overtimepanel-TileEntityHybridSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    ic2-core-block-machine-tileentity-TileEntityInduction:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-base-TileEntityCombinerSolidMatter:
+      tick-no-players: false
+      tick-interval: 1
+    ic2-core-block-generator-tileentity-TileEntityGenerator:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-integration-thaumtinker-TileEntityIhorSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-base-TileEntityPerQuantumQuarry:
+      tick-no-players: false
+      tick-interval: 1
+    ic2-core-block-machine-tileentity-TileEntityMatter:
+      tick-no-players: false
+      tick-interval: 1
+    com-denfop-tiles-overtimepanel-TileEntityQuantumSolarPanel:
+      tick-no-players: false
+      tick-interval: 1
+    thaumic-tinkerer-common-block-tile-TileForcefield:
+      tick-no-players: false
+      tick-interval: 1

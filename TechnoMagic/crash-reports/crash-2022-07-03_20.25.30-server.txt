@@ -1,0 +1,111 @@
+---- Minecraft Crash Report ----
+// I bet Cylons wouldn't have this problem.
+
+Time: 03.07.22 20:25
+Description: Exception in server tick loop
+
+Missing Mods:
+	asielib : [0.4.9,)
+
+cpw.mods.fml.common.MissingModsException
+	at cpw.mods.fml.common.Loader.sortModList(Loader.java:243)
+	at cpw.mods.fml.common.Loader.loadMods(Loader.java:493)
+	at cpw.mods.fml.server.FMLServerHandler.beginServerLoading(FMLServerHandler.java:87)
+	at cpw.mods.fml.common.FMLCommonHandler.onServerStart(FMLCommonHandler.java:320)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:176)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:643)
+	at java.lang.Thread.run(Thread.java:750)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Thermos Version: cyberdynecc:Thermos:1.7.10-1614.58
+	Plugins: ~~ERROR~~ NullPointerException: null
+	Disabled Plugins: ~~ERROR~~ NullPointerException: null
+	Operating System: Linux (amd64) version 5.13.0-51-generic
+	Java Version: 1.8.0_322, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 54507240 bytes (51 MB) / 368574464 bytes (351 MB) up to 954728448 bytes (910 MB)
+	JVM Flags: 1 total; -Xmx1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 71 mods loaded, 61 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	U	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	U	FML{7.10.99.99} [Forge Mod Loader] (Thermos.jar) 
+	U	Forge{10.13.4.1614} [Minecraft Forge] (Thermos.jar) 
+	U	kimagine{0.2} [KImagine] (minecraft.jar) 
+	U	appliedenergistics2-core{rv3-beta-6} [Applied Energistics 2 Core] (minecraft.jar) 
+	U	CodeChickenCore{1.0.7.47} [CodeChicken Core] (minecraft.jar) 
+	U	NotEnoughItems{1.0.5.118} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.118-universal.jar) 
+	U	OpenComputers|Core{1.7.5.1290} [OpenComputers (Core)] (minecraft.jar) 
+	U	ThE-core{1.0.0.1} [Thaumic Energistics Core] (minecraft.jar) 
+	U	ThaumicTinkerer-preloader{0.1} [Thaumic Tinkerer Core] (minecraft.jar) 
+	U	<CoFH ASM>{000} [CoFH ASM] (minecraft.jar) 
+	U	Treecapitator{1.7.10} [Treecapitator] (1.7.10Treecapitator_universal_2.0.4.jar) 
+	U	ae2stuff{0.5.1.9} [AE2 Stuff] (ae2stuff-rv3-0.5.1.9-mc1.7.10.jar) 
+	U	AFSU{1.2.3a-Freeza} [AFSU Mod] (AFSU-1.2.3a-Freeza.jar) 
+	U	appliedenergistics2{rv3-beta-6} [Applied Energistics 2] (appliedenergistics2_mc1.7.10_rv3_beta_6.jar) 
+	U	Backpack{2.0.1} [Backpack] (backpack_2.0.1_1.7.x.jar) 
+	U	bdlib{1.9.4.109} [BD Lib] (bdlib-1.9.4.109-mc1.7.10.jar) 
+	U	BinnieCore{2.0.22.7} [Binnie Core] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	U	Botany{2.0.22.7} [Botany] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	U	ExtraTrees{2.0.22.7} [Extra Trees] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	U	Genetics{2.0.22.7} [Genetics] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	U	ExtraBees{2.0.22.7} [Extra Bees] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	U	Botania{r1.8-249} [Botania] (botania-mod-1_7_10.jar) 
+	U	CoFHCore{1.7.10R3.1.4} [CoFH Core] (cofhcore-1.7.103.1.4-329.jar) 
+	U	computronics{1.6.6} [Computronics] (Computronics-1.7.10-1.6.6.jar) 
+	U	MineTweaker3{3.1.0} [MineTweaker 3] (crafttweaker-1.7.10-3.1.0-legacy.jar) 
+	U	EMT{1.2.6.2} [Electro-Magic Tools] (electromagictools_1.2.6.21.7.10.jar) 
+	U	endercore{1.7.10-0.2.0.36_beta} [EnderCore] (EnderCore-1.7.10-0.2.0.36_beta.jar) 
+	U	EnderIO{1.7.10-2.3.0.428_beta} [Ender IO] (EnderIO-1.7.10-2.3.0.428_beta.jar) 
+	U	extracells{2.3.14} [Extra Cells 2] (ExtraCells-1.7.10-2.3.14b200.jar) 
+	U	ForbiddenMagic{1.7.10-0.575} [Forbidden Magic] (forbidden-magic-1.7.10-0.575.jar) 
+	U	Forestry{4.2.16.64} [Forestry for Minecraft] (forestry_1.7.10-4.2.16.64.jar) 
+	U	GraviSuite{1.7.10-2.0.3} [Graviation Suite] (GraviSuite_1.7.10_2.0.3.jar) 
+	U	IC2NuclearControl{2.4.5a} [Nuclear Control 2] (ic2nuclearcontrol-2.4.5a.jar) 
+	U	IC2{2.2.827-experimental} [IndustrialCraft 2] (industrialcraft_2_2.2.827_ex1.7.10.jar) 
+	U	industrialupgrade{2.5.21} [Industrial Upgrade] (IndustrialUpgrade-2.5.21.jar) 
+	U	IronChest{6.0.62.742} [Iron Chest] (ironchest-1.7.10-6.0.62.742-universal.jar) 
+	U	MagicBees{2.4.4} [Magic Bees] (magicbees_1.7.10_2.4.4.jar) 
+	U	MineFactoryReloaded{1.7.10R2.8.1} [MineFactory Reloaded] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatAppliedEnergistics{1.7.10R2.8.1} [MFR Compat: Applied Energistics] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatAtum{1.7.10R2.8.1} [MFR Compat: Atum] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatBackTools{1.7.10R2.8.1} [MFR Compat: BackTools] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatBuildCraft{1.7.10R2.8.1} [MFR Compat: BuildCraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatChococraft{1.7.10R2.8.1} [MFR Compat: Chococraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatExtraBiomes{1.7.10R2.8.1} [MFR Compat: ExtraBiomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatForestry{1.7.10R2.8.1} [MFR Compat: Forestry] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatForgeMicroblock{1.7.10R2.8.1} [MFR Compat: ForgeMicroblock] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatIC2{1.7.10R2.8.1} [MFR Compat: IC2] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatProjRed{1.7.10R2.8.1} [MFR Compat ProjectRed] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatRailcraft{1.7.10R2.8.1} [MFR Compat: Railcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatSufficientBiomes{1.7.10R2.8.1} [MFR Compat: Sufficient Biomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatThaumcraft{1.7.10R2.8.1} [MFR Compat: Thaumcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatThermalExpansion{1.7.10R2.8.1} [MFR Compat: Thermal Expansion] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTConstruct{1.7.10R2.8.1} [MFR Compat: Tinkers' Construct] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTwilightForest{1.7.10R2.8.1} [MFR Compat: TwilightForest] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	MineFactoryReloaded|CompatVanilla{1.7.10R2.8.1} [MFR Compat: Vanilla] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	U	NodalMechanics{1.7.10R1.0} [NodalMechanics] (Nodal-Mechanics-Mod-1.7.10.jar) 
+	U	OpenComputers{1.7.5.1290} [OpenComputers] (OpenComputers_MC1.7.10_1.7.5.1290_universal.jar) 
+	U	PowerUtils{1.7.10-1.0.4} [PowerUtils] (PowerUtils_1.7.10_1.0.4.jar) 
+	U	tcinventoryscan{1.0.11} [TC Inventory Scanning] (tcinventoryscan-mc1.7.10-1.0.11.jar) 
+	U	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft_1.7.10_4.2.3.5.jar) 
+	U	thaumicenergistics{1.1.3.0} [Thaumic Energistics] (thaumicenergistics_1.7.10_1.1.3.0.jar) 
+	U	ThaumicTinkerer{unspecified} [Thaumic Tinkerer] (ThaumicTinkerer_2.5_1.7.10_164.jar) 
+	U	ThermalDynamics{1.7.10R1.2.1} [Thermal Dynamics] (thermaldynamics-1.7.101.2.1-172.jar) 
+	U	ThermalExpansion{1.7.10R4.1.5} [Thermal Expansion] (thermalexpansion-1.7.104.1.5-248.jar) 
+	U	ThermalFoundation{1.7.10R1.2.6} [Thermal Foundation] (thermalfoundation-1.7.101.2.6-118.jar) 
+	U	Waila{1.5.10} [Waila] (Waila_1.5.10_1.7.10.jar) 
+	U	witchery{0.24.1} [Witchery] (witchery_1.7.10_0.24.1.jar) 
+	U	WorldEditCuiFe{1.0.2} [WorldEdit CUI Forge Edition] (worldeditcuife-v1.0.3-mf-1.7.10-10.13.4.1566.jar) 
+	U	bspkrsCore{6.15} [bspkrsCore] ([1.7.10]bspkrsCore-universal-6.15.jar) 
+	U	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10.jar) 
+	Profiler Position: N/A (disabled)
+	Is Modded: Definitely; Server brand changed to 'thermos,cauldron,craftbukkit,mcpc,kcauldron,fml,forge'
+	Type: Dedicated Server (map_server.txt)

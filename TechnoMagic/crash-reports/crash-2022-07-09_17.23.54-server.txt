@@ -1,0 +1,259 @@
+---- Minecraft Crash Report ----
+// Everything's going to plan. No, really, that was supposed to happen.
+
+Time: 09.07.22 17:23
+Description: Exception in server tick loop
+
+cpw.mods.fml.common.LoaderException: java.lang.NoClassDefFoundError: net/minecraft/client/entity/EntityClientPlayerMP
+	at cpw.mods.fml.common.LoadController.transition(LoadController.java:163)
+	at cpw.mods.fml.common.Loader.initializeMods(Loader.java:739)
+	at cpw.mods.fml.server.FMLServerHandler.finishServerLoading(FMLServerHandler.java:97)
+	at cpw.mods.fml.common.FMLCommonHandler.onServerStarted(FMLCommonHandler.java:325)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71197_b(DedicatedServer.java:288)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:643)
+	at java.lang.Thread.run(Thread.java:750)
+Caused by: java.lang.NoClassDefFoundError: net/minecraft/client/entity/EntityClientPlayerMP
+	at yalter.mousetweaks.loaders.MouseTweaksForge.init(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:532)
+	at sun.reflect.GeneratedMethodAccessor3.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:212)
+	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:190)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:119)
+	at cpw.mods.fml.common.Loader.initializeMods(Loader.java:737)
+	... 5 more
+Caused by: java.lang.ClassNotFoundException: net.minecraft.client.entity.EntityClientPlayerMP
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:197)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	... 32 more
+Caused by: java.lang.NullPointerException
+	at net.minecraft.launchwrapper.LaunchClassLoader.findClass(LaunchClassLoader.java:188)
+	... 34 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Thermos Version: cyberdynecc:Thermos:1.7.10-1614.58
+	Plugins: 
+	Disabled Plugins: 
+	Operating System: Linux (amd64) version 5.13.0-52-generic
+	Java Version: 1.8.0_322, BellSoft
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), BellSoft
+	Memory: 252805216 bytes (241 MB) / 759693312 bytes (724 MB) up to 954728448 bytes (910 MB)
+	JVM Flags: 1 total; -Xmx1024M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.99.99 Minecraft Forge 10.13.4.1614 93 mods loaded, 83 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+	UCHI	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) 
+	UCHI	FML{7.10.99.99} [Forge Mod Loader] (Thermos.jar) 
+	UCHI	Forge{10.13.4.1614} [Minecraft Forge] (Thermos.jar) 
+	UCHI	kimagine{0.2} [KImagine] (minecraft.jar) 
+	UCHI	appliedenergistics2-core{rv3-beta-6} [Applied Energistics 2 Core] (minecraft.jar) 
+	UCHI	CodeChickenCore{1.0.7.47} [CodeChicken Core] (minecraft.jar) 
+	UCHI	NotEnoughItems{1.0.5.118} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.5.118-universal.jar) 
+	UCHI	OpenComputers|Core{1.7.5.1290} [OpenComputers (Core)] (minecraft.jar) 
+	UCHI	ThE-core{1.0.0.1} [Thaumic Energistics Core] (minecraft.jar) 
+	UCHI	ThaumicTinkerer-preloader{0.1} [Thaumic Tinkerer Core] (minecraft.jar) 
+	UCHI	OpenModsCore{0.10.1} [OpenModsCore] (minecraft.jar) 
+	UCHI	<CoFH ASM>{000} [CoFH ASM] (minecraft.jar) 
+	UCHI	bspkrsCore{6.15} [bspkrsCore] ([1.7.10]bspkrsCore-universal-6.15.jar) 
+	UCHI	Treecapitator{1.7.10} [Treecapitator] (1.7.10Treecapitator_universal_2.0.4.jar) 
+	UCHI	appliedenergistics2{rv3-beta-6} [Applied Energistics 2] (appliedenergistics2_mc1.7.10_rv3_beta_6.jar) 
+	UCHI	bdlib{1.9.4.109} [BD Lib] (bdlib-1.9.4.109-mc1.7.10.jar) 
+	UCHI	ae2stuff{0.5.1.9} [AE2 Stuff] (ae2stuff-rv3-0.5.1.9-mc1.7.10.jar) 
+	UCHI	IC2{2.2.827-experimental} [IndustrialCraft 2] (industrialcraft_2_2.2.827_ex1.7.10.jar) 
+	UCHI	AFSU{1.2.3a-Freeza} [AFSU Mod] (AFSU-1.2.3a-Freeza.jar) 
+	UCHI	CoFHCore{1.7.10R3.1.4} [CoFH Core] (cofhcore-1.7.103.1.4-329.jar) 
+	UCHI	asielib{0.4.9} [asielib] (AsieLib-1.7.10-0.4.9.jar) 
+	UCHI	Baubles{1.0.1.10} [Baubles] (Baubles-1.7.10-1.0.1.10.jar) 
+	UCHI	Thaumcraft{4.2.3.5} [Thaumcraft] (Thaumcraft_1.7.10_4.2.3.5.jar) 
+	UCHI	Botania{r1.8-249} [Botania] (botania-mod-1_7_10.jar) 
+	UCHI	Avaritia{1.13} [Avaritia] (Avaritia_1.13.jar) 
+	UCHI	wanionlib{1.7.10-1.8} [WanionLib] (WanionLib-1.7.10-1.8.jar) 
+	UCHI	avaritiaddons{1.4b} [Avaritiaddons] (Avaritiaddons-1.4b.jar) 
+	UCHI	Forestry{4.2.16.64} [Forestry for Minecraft] (forestry_1.7.10-4.2.16.64.jar) 
+	UCHI	BinnieCore{2.0.22.7} [Binnie Core] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	UCHI	Botany{2.0.22.7} [Botany] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	UCHI	ExtraTrees{2.0.22.7} [Extra Trees] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	UCHI	Genetics{2.0.22.7} [Genetics] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	UCHI	ExtraBees{2.0.22.7} [Extra Bees] (binnie-mods-1.7.10-2.0.22.7.jar) 
+	UCHI	endercore{1.7.10-0.2.0.36_beta} [EnderCore] (EnderCore-1.7.10-0.2.0.36_beta.jar) 
+	UCHI	MineFactoryReloaded{1.7.10R2.8.1} [MineFactory Reloaded] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	Waila{1.5.10} [Waila] (Waila_1.5.10_1.7.10.jar) 
+	UCHI	EnderIO{1.7.10-2.3.0.428_beta} [Ender IO] (EnderIO-1.7.10-2.3.0.428_beta.jar) 
+	UCHI	ThermalFoundation{1.7.10R1.2.6} [Thermal Foundation] (thermalfoundation-1.7.101.2.6-118.jar) 
+	UCHI	ThermalExpansion{1.7.10R4.1.5} [Thermal Expansion] (thermalexpansion-1.7.104.1.5-248.jar) 
+	UCHI	OpenComputers{1.7.5.1290} [OpenComputers] (OpenComputers_MC1.7.10_1.7.5.1290_universal.jar) 
+	UCHI	computronics{1.6.6} [Computronics] (Computronics-1.7.10-1.6.6.jar) 
+	UCHI	MineTweaker3{3.1.0} [MineTweaker 3] (crafttweaker-1.7.10-3.1.0-legacy.jar) 
+	UCHI	creativecore{1.3.14} [CreativeCore] (CreativeCore_v1.3.24_mc1.7.10.jar) 
+	UCHI	DragonsRadioMod{1.7.1} [Dragon's Radio Mod] (Dragon's+Radio+Mod-MC1.7.10-1.7.1.jar) 
+	UCHI	EMT{1.2.6.2} [Electro-Magic Tools] (electromagictools_1.2.6.21.7.10.jar) 
+	UCHI	extracells{2.3.14} [Extra Cells 2] (ExtraCells-1.7.10-2.3.14b200.jar) 
+	UCHI	ThaumicTinkerer{unspecified} [Thaumic Tinkerer] (ThaumicTinkerer_2.5_1.7.10_164.jar) 
+	UCHI	ForbiddenMagic{1.7.10-0.575} [Forbidden Magic] (forbidden-magic-1.7.10-0.575.jar) 
+	UCHI	gvc{0.6.1} [�aGliby's�f Voice Chat Mod] (GlibysVC_1.7.10_0.6.1.jar) 
+	UCHI	GraviSuite{1.7.10-2.0.3} [Graviation Suite] (GraviSuite_1.7.10_2.0.3.jar) 
+	UCHI	IC2NuclearControl{2.4.5a} [Nuclear Control 2] (ic2nuclearcontrol-2.4.5a.jar) 
+	UCHI	industrialupgrade{2.5.21} [Industrial Upgrade] (IndustrialUpgrade-2.5.21.jar) 
+	UCHI	inventorytweaks{1.59-dev-152-cf6e263} [Inventory Tweaks] (InventoryTweaks_1.7.10_1.59_dev_152.jar) 
+	UCHI	IronChest{6.0.62.742} [Iron Chest] (ironchest-1.7.10-6.0.62.742-universal.jar) 
+	UCHI	journeymap{5.1.4p2} [JourneyMap] (journeymap-1.7.10-5.1.4p2-unlimited.jar) 
+	UCHI	MagicBees{2.4.4} [Magic Bees] (magicbees_1.7.10_2.4.4.jar) 
+	UCHI	MineFactoryReloaded|CompatAppliedEnergistics{1.7.10R2.8.1} [MFR Compat: Applied Energistics] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatForestry{1.7.10R2.8.1} [MFR Compat: Forestry] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatForgeMicroblock{1.7.10R2.8.1} [MFR Compat: ForgeMicroblock] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatIC2{1.7.10R2.8.1} [MFR Compat: IC2] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatThaumcraft{1.7.10R2.8.1} [MFR Compat: Thaumcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatThermalExpansion{1.7.10R2.8.1} [MFR Compat: Thermal Expansion] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHI	MineFactoryReloaded|CompatVanilla{1.7.10R2.8.1} [MFR Compat: Vanilla] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UCHE	MouseTweaks{2.4.4} [Mouse Tweaks] (MouseTweaks_2.4.4_mc1.7.10.jar) 
+	UCHI	NEIAddons{1.12.15.41} [NEI Addons] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|Developer{1.12.15.41} [NEI Addons: Developer Tools] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|AppEng{1.12.15.41} [NEI Addons: Applied Energistics 2] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|Botany{1.12.15.41} [NEI Addons: Botany] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|Forestry{1.12.15.41} [NEI Addons: Forestry] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|CraftingTables{1.12.15.41} [NEI Addons: Crafting Tables] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NEIAddons|ExNihilo{1.12.15.41} [NEI Addons: Ex Nihilo] (neiaddons-1.12.15.41-mc1.7.10.jar) 
+	UCHI	NodalMechanics{1.7.10R1.0} [NodalMechanics] (Nodal-Mechanics-Mod-1.7.10.jar) 
+	UCHI	opframe{0.1} [OnlinePictureFrame] (OnlinePicFrame+v1.0+mc1.7.10.jar) 
+	UCHI	OpenMods{0.10.1} [OpenMods] (openmodslib-1.7.10-0.10.1.jar) 
+	UCHI	OpenPeripheralCore{1.4} [OpenPeripheralCore] (OpenPeripheralCore-1.7.10-1.4.jar) 
+	UCHI	PowerUtils{1.7.10-1.0.4} [PowerUtils] (PowerUtils_1.7.10_1.0.4.jar) 
+	UCHI	symcalc{0.14} [Symcalc] (symcalc-0.14.jar) 
+	UCHI	tcinventoryscan{1.0.11} [TC Inventory Scanning] (tcinventoryscan-mc1.7.10-1.0.11.jar) 
+	UCHI	thaumicenergistics{1.1.3.0} [Thaumic Energistics] (thaumicenergistics_1.7.10_1.1.3.0.jar) 
+	UCHI	ThermalDynamics{1.7.10R1.2.1} [Thermal Dynamics] (thermaldynamics-1.7.101.2.1-172.jar) 
+	UCHI	witchery{0.24.1} [Witchery] (witchery_1.7.10_0.24.1.jar) 
+	UCHI	WorldEditCuiFe{1.0.2} [WorldEdit CUI Forge Edition] (worldeditcuife-v1.0.3-mf-1.7.10-10.13.4.1566.jar) 
+	UCHI	UniDict{1.7.10-2.9} [UniDict] (UniDict_1.7.10_2.9.jar) 
+	UD	MineFactoryReloaded|CompatAtum{1.7.10R2.8.1} [MFR Compat: Atum] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatBackTools{1.7.10R2.8.1} [MFR Compat: BackTools] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatBuildCraft{1.7.10R2.8.1} [MFR Compat: BuildCraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatChococraft{1.7.10R2.8.1} [MFR Compat: Chococraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatExtraBiomes{1.7.10R2.8.1} [MFR Compat: ExtraBiomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatProjRed{1.7.10R2.8.1} [MFR Compat ProjectRed] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatRailcraft{1.7.10R2.8.1} [MFR Compat: Railcraft] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatSufficientBiomes{1.7.10R2.8.1} [MFR Compat: Sufficient Biomes] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTConstruct{1.7.10R2.8.1} [MFR Compat: Tinkers' Construct] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	UD	MineFactoryReloaded|CompatTwilightForest{1.7.10R2.8.1} [MFR Compat: TwilightForest] (MineFactoryReloaded-[1.7.10]2.8.1-174.jar) 
+	OpenModsLib class transformers: [stencil_patches:ENABLED],[movement_callback:ENABLED],[player_damage_hook:ACTIVATED],[map_gen_fix:FINISHED],[gl_capabilities_hook:ENABLED],[player_render_hook:ENABLED]
+	Class transformer null safety: all safe
+	AE2 Version: beta rv3-beta-6 for Forge 10.13.4.1448
+	CoFHCore: -[1.7.10]3.1.4-329
+	MineFactoryReloaded: -[1.7.10]2.8.1-174
+	ThermalFoundation: -[1.7.10]1.2.6-118
+	ThermalExpansion: -[1.7.10]4.1.5-248
+	ThermalDynamics: -[1.7.10]1.2.1-172
+	List of loaded APIs: 
+		* appliedenergistics2|API (rv2) from ThaumicTinkerer_2.5_1.7.10_164.jar
+		* asielibAPI (1.1) from AsieLib-1.7.10-0.4.9.jar
+		* asielibAPI|chat (1.0) from AsieLib-1.7.10-0.4.9.jar
+		* asielibAPI|tile (1.0) from AsieLib-1.7.10-0.4.9.jar
+		* asielibAPI|tool (1.1) from AsieLib-1.7.10-0.4.9.jar
+		* Baubles|API (1.0.1.10) from Baubles-1.7.10-1.0.1.10.jar
+		* BotaniaAPI (61) from Avaritia_1.13.jar
+		* CoFHAPI (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* CoFHAPI|block (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHAPI|core (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHAPI|energy (1.7.10R1.0.2) from ic2nuclearcontrol-2.4.5a.jar
+		* CoFHAPI|fluid (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHAPI|inventory (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHAPI|item (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* CoFHAPI|modhelpers (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHAPI|tileentity (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* CoFHAPI|transport (1.7.10R1.0.13) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* CoFHAPI|world (1.7.10R1.3.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|audio (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|gui (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|gui|container (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|gui|element (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|gui|element|listbox (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|gui|slot (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|inventory (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|render (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|render|particle (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|util (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|util|helpers (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|util|position (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|world (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* CoFHLib|world|feature (1.7.10R1.2.1) from cofhcore-1.7.103.1.4-329.jar
+		* computronicsAPI (1.3) from Computronics-1.7.10-1.6.6.jar
+		* computronicsAPI|audio (1.0) from Computronics-1.7.10-1.6.6.jar
+		* computronicsAPI|chat (1.3) from Computronics-1.7.10-1.6.6.jar
+		* computronicsAPI|multiperipheral (1.1) from Computronics-1.7.10-1.6.6.jar
+		* computronicsAPI|tape (1.0) from Computronics-1.7.10-1.6.6.jar
+		* EnderIOAPI (0.0.2) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* EnderIOAPI|Redstone (0.0.2) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* EnderIOAPI|Teleport (0.0.2) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* EnderIOAPI|Tools (0.0.2) from EnderIO-1.7.10-2.3.0.428_beta.jar
+		* ForestryAPI|apiculture (4.8.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|arboriculture (4.2.1) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|circuits (3.1.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|core (5.0.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|farming (2.1.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|food (1.1.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|fuels (2.0.1) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|genetics (4.7.1) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|hives (4.1.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|lepidopterology (1.3.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|mail (3.0.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|multiblock (3.0.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|recipes (5.4.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|storage (3.0.0) from forestry_1.7.10-4.2.16.64.jar
+		* ForestryAPI|world (2.1.0) from forestry_1.7.10-4.2.16.64.jar
+		* IC2API (1.0) from industrialcraft_2_2.2.827_ex1.7.10.jar
+		* NuclearControlAPI (v1.0.5) from ic2nuclearcontrol-2.4.5a.jar
+		* OpenComputersAPI|Component (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Core (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Driver (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Driver|Item (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Event (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|FileSystem (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Internal (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Machine (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Manual (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Network (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenComputersAPI|Prefab (6.0.0-alpha) from OpenComputers_MC1.7.10_1.7.5.1290_universal.jar
+		* OpenPeripheralApi (3.4.2) from OpenPeripheralCore-1.7.10-1.4.jar
+		* Thaumcraft|API (4.2.2.0) from Thaumcraft_1.7.10_4.2.3.5.jar
+		* thaumicenergistics|API (1.1) from thaumicenergistics_1.7.10_1.1.3.0.jar
+		* WailaAPI (1.2) from Waila_1.5.10_1.7.10.jar
+	EnderIO: Found the following problem(s) with your installation:
+                  * The RF API that is being used (1.7.10R1.3.1 from <unknown>) differes from that that is reported as being loaded (1.7.10R1.0.2 from ic2nuclearcontrol-2.4.5a.jar).
+                    It is a supported version, but that difference may lead to problems.
+                 An unsupported base software is installed: 'thermos, cauldron, craftbukkit, mcpc, kcauldron'. This is NOT supported.
+                 This may have caused the error. Try reproducing the crash WITHOUT this/these mod(s) before reporting it.
+	Forestry : Warning: You have mods that change the behavior of Minecraft, ForgeModLoader, and/or Minecraft Forge to your client: 
+Bukkit, Cauldron, or other Bukkit replacement
+These may have caused this error, and may not be supported. Try reproducing the crash WITHOUT these mods, and report it then.
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 20; []
+	Is Modded: Definitely; Server brand changed to 'thermos,cauldron,craftbukkit,mcpc,kcauldron,fml,forge'
+	Type: Dedicated Server (map_server.txt)

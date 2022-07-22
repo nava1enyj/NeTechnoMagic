@@ -1,0 +1,25 @@
+groups:
+  Players:
+    info:
+      prefix: '[qwe]'
+      suffix: ''
+      build: true
+    permissions:
+    - chatty.mentions
+    - chatty.command.msg
+    - chatty.chat.local
+    - chatty.chat.global
+    options:
+      default: false
+schema-version: 1
+users:
+  6a03ef0d-494c-3eb6-be87-7282f1095609:
+    group:
+    - Players
+    options:
+      name: '123123111'
+  a99c4341-6cc6-3f95-98b6-d83e01d692af:
+    group:
+    - Players
+    options:
+      name: nava1enyj
